@@ -1,660 +1,1547 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-   <link
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+  <title>Dashboard UI</title>
+
+
+  <!-- FONT AWESOME -->
+  <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 </head>
 <style>
-  
-  *{
+*{
   margin:0;
   padding:0;
   box-sizing:border-box;
 }
-  body{
-    background-color:white;
-  }
-
-  nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: red;
-     padding: 20px, 30px; 
-     width: 100%;
-     height: 50px;
-  }
-
-  .logo{
-   width: 80px;
-   top: 10px;
-   left: 60px;
-   position: relative ;
-  }
- .href{
-   display: flex;
-   flex-direction: row;
-   gap: 50px;
-   transform: translateX(70px);
- }
-
- .href a:hover{
-  color: blue;
- }
-  .href a{
-    text-decoration: none;
-    color: white;
-    font-weight: bolder;
-    font-size: small;
-  }
 
 
-.navbtn{
-  padding: 10px,20px;
-  border: 1px solid #f35b5b;
-  background-color: transparent;
-  color: white;
-  margin-right: 30px;
-  height: 20px;
-  width: 60px;
-}
-
-.navbtn:hover{
-  background-color: white;
-  color: black;
-}
-
-.imageleft{
-  width: 90%;
-  height:110%;
-
-  position: relative;
-  left: 100px;
-  bottom:37px;
-  
-}
-
-.hero{
-height: 150%;
-width: 100%;
-background: red;
-border: none;
-padding: 40px;
-display: flex;
-}
-
-.heroright{
-position: relative;
-left: 107px;
 
 
-font-size: large;
-font-weight: bolder;
-color: white;
-}
-.we{
-font-weight: lighter;
-font-size: medium;
-}
-
-.hero-form{
-  display:flex ;
-  justify-content: space-between;
-align-items: center;
-width: 70%;
-height: 38px;
-background: white;
-padding: 15px;
-
-position: relative;
-right: 224px;
-top: 270px;
-}
-
-.hero-form input{
-width: 50%;
-height: 18px;
-padding: 5px;
-background-color: white;
-border: none;
-color: black;
-
-position: relative;
-left: 15px;
-}
-
-.hero-form button{
-  width: 80px;
-  height:30px;
-  padding: 4px;
-  background-color: green;
-  border: none;
-  color: black;
-  
-  position: relative;
-  left: 12px;
-} 
-
-.hero-form button:hover{
-  background-color: blue;
-  color: black;
+body{
+  font-family:Arial, sans-serif;
+  background:#f5f5f5;
+  padding:20px;
+  color:#222;
 }
 
 
 
-.connect{
-display: flex;
-justify-content: center;
-align-items: center;
-font-weight: 700;
-font-size: 2rem;
 
+/* DASHBOARD */
+.dashboard{
+  width:100%;
 }
 
-.target{
-  display: flex;
-  justify-content: center;
-font-weight: 700;
-font-size: 2rem;
-align-items: center;
-line-height: 1.3;
+
+
+
+/* TOPBAR */
+.topbar{
+  height:70px;
+  background:#fff;
+  border-radius:20px;
+
+
+
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+
+
+
+  padding:0 20px;
+  margin-bottom:20px;
+
+
+
+
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
 }
 
-.stats-row{
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction:row;
-gap: 160px;
-margin-top: 30px;
-}
-.stat{
-text-align: center;
+
+
+
+/* SEARCH */
+.search-box{
+  width:360px;
+  height:42px;
+  background:#f3f3f3;
+  border-radius:12px;
+
+
+
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+
+
+
+  padding:0 15px;
 }
 
-.stat h3{
-margin: 0;
-font-size: 36px;
+
+
+
+.search-box i{
+  color:#777;
 }
 
-.stat p{
-  margin-top: 8px;
-  font-size: 13px;
+
+
+
+.search-box input{
+  flex:1;
+  border:none;
+  outline:none;
+  background:transparent;
+  font-size:14px;
 }
 
-.wide-img{
-  width: 50%;
-   margin-top: 4%;
-  margin-left: 25%;
+
+
+
+.shortcut{
+  background:#fff;
+  padding:5px 10px;
+  border-radius:8px;
+  font-size:12px;
+  color:#777;
 }
 
-.care{
- display: flex;
-justify-content: center;
-align-items: center;
-font-weight: 700;
-font-size: 2rem;
-line-height: 1.3; 
-}
-.easy{
-display: flex;
-justify-content: center;
-align-items: center;
-font-weight: 700;
-font-size: 2rem;
-line-height: 1; 
-}
-.svc-img-wrap{
-flex: 1;
+
+
+
+/* TOPBAR RIGHT */
+.topbar-right{
+  display:flex;
+  align-items:center;
+  gap:18px;
 }
 
-.svc-img{
-  width: 100%;
-  max-width: 400px;
-  display: block;
+
+
+
+/* CREATE BUTTON */
+.create-btn{
+  border:none;
+  background:#3b82f6;
+  color:#fff;
+
+
+
+
+  padding:12px 18px;
+  border-radius:12px;
+
+
+
+
+  display:flex;
+  align-items:center;
+  gap:8px;
+
+
+
+
+  cursor:pointer;
 }
 
-.svc-row{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 60px;
-    max-width: 1100px;
-    margin: 100px auto;
-    padding: 0 20px;
+
+
+
+/* ICONS */
+.icon{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:#f3f3f3;
+
+
+
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+
+
+
+  position:relative;
+  cursor:pointer;
 }
 
-.svc-text{
-    flex: 1;
+
+
+
+.icon::after{
+  content:"";
+  width:8px;
+  height:8px;
+  background:red;
+  border-radius:50%;
+
+
+
+
+  position:absolute;
+  top:8px;
+  right:8px;
 }
 
-.svc-text h3{
-    font-size: 38px;
-    margin-bottom: 20px;
+
+
+
+/* PROFILE IMAGE */
+.profile img{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  object-fit:cover;
 }
 
-.svc-text p{
-    color: #666;
-    line-height: 1.8;
-    margin-bottom: 25px;
+
+
+
+/* MAIN CONTENT */
+.main-content{
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
 }
 
-.win{
-  margin-top: 50px;
+
+
+
+/* SIDEBAR */
+.sidebar{
+  width:260px;
+  min-height:815px;
+
+
+
+
+  background:#fff;
+  border-radius:20px;
+  padding:17px;
+
+
+
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+
+
+
+
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
 }
 
-.svc-row button{
-  height: 30px;
-  width: 70px;
-  padding: 5px;
-  background: green;
-  color: black;
- cursor: pointer; 
- border: none;
-}
-.svc-row button:hover{
-  background-color: red;
-  color: white;
-  border: none;
-}
-.about{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 90px;
-  padding: 50px 20px;
+
+
+
+.imgs{
+  width: 20px;
 }
 
-.about-image img{
-  width: 350px;
-  display: block;
+
+
+
+/* LOGO */
+.logo{
+  width:45px;
+  height:45px;
+  border-radius:14px;
+  background:#111827;
+  color:#fff;
+
+
+
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+
+
+
+  margin-bottom:2px;
 }
 
-.about-text{
-  max-width: 400px;
+
+
+
+/* MENU */
+.menu{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
 }
 
-.about-button{
-    height: 30px;
-  width: 70px;
-  padding: 5px;
-  background: green;
-  color: black;
-  cursor: pointer;
-  border: none;
+
+
+
+/* MENU ITEM */
+.menu-item{
+  height:45px;
+  border-radius:12px;
+
+
+
+
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+
+
+
+  padding:0 14px;
+
+
+
+
+  text-decoration:none;
+  color:#444;
+
+
+
+
+  cursor:pointer;
 }
 
-.about-button:hover {
-  
-  background: red;
-  color: white;
-  border: none;
+
+
+
+.menu-item:hover{
+  background:#f3f3f3;
 }
 
-.team-top{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 300px;
+
+
+
+.menu-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 
-.team-top h2{
-  font-size: xx-larger;
-  font-weight: bolder;
+
+
+
+.submenu{
+  margin-left:42px;
+
+
+
+
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+
+
+
+
+  margin-top:10px;
 }
 
-.team-top p{
-  font-size: small;
+
+
+
+.submenu a{
+  text-decoration:none;
+  color:#777;
+  font-size:14px;
 }
 
-.tcard img{
-  width: 200px;
+
+
+
+.active-link{
+  background:#f3f3f3;
+  padding:12px;
+  border-radius:10px;
+  color:#111 !important;
 }
 
-.team-cards{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 80px;
-  margin-top: 30px;
+
+
+
+/* SIDEBAR BOTTOM */
+.sidebar-bottom{
+  margin-top:40px;
 }
 
-.see-more-btn{
-     height: 30px;
- width: 70px;
- padding: 5px;
- background: green;
- color: black;
- cursor: pointer;
- border: none;
- margin-left: 50%;
- margin-top: 40px;
- margin-bottom: 20px;
+
+
+
+/* HELP BOX */
+.help-box{
+  background:#f8f8f8;
+  border-radius:14px;
+
+
+
+
+  padding:15px;
+
+
+
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+
+
+
+  margin-bottom:20px;
 }
 
-footer{
-    background:#071321;
-    color:white;
-    padding:60px 80px;
+
+
+
+.help-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+
+
+
+  font-size:14px;
 }
 
-.footer-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:50px;
+
+
+
+.badge{
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  background:#8b5cf6;
+  color:#fff;
+
+
+
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+
+
+
+  font-size:12px;
 }
 
-.footer-logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
+
+
+
+/* THEME BUTTONS */
+.theme-toggle{
+  display:flex;
+  background:#f3f3f3;
+  border-radius:12px;
+  padding:5px;
 }
 
-.footer-logo img{
-    width:80px;
+
+
+
+.theme-btn{
+  flex:1;
+  border:none;
+  background:transparent;
+
+
+
+
+  padding:10px;
+  border-radius:10px;
+
+
+
+
+  cursor:pointer;
 }
 
-.footer-logo span{
-    font-size:24px;
-    font-weight:600;
+
+
+
+.active-btn{
+  background:#fff;
 }
 
-.social-icons{
-    display:flex;
-    gap:12px;
+
+
+
+/* USER PANEL */
+.user-panel{
+  width:320px;
+  background:#fff;
+  border-radius:20px;
+  padding:20px;
+
+
+
+
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
 }
 
-.social-icons a{
-    width:35px;
-    height:35px;
-    border-radius:50%;
-    background:#142234;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    text-decoration:none;
+
+
+
+/* PANEL HEADER */
+.panel-header{
+  display:flex;
+  align-items:center;
+  gap:15px;
+
+
+
+
+  padding-bottom:20px;
+  border-bottom:1px solid #eee;
+
+
+
+
+  margin-bottom:20px;
 }
 
-.footer-content{
-    display:flex;
-    justify-content:space-between;
-    gap:40px;
-    flex-wrap:wrap;
+
+
+
+/* USER LIST */
+.user-list{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
 }
 
-.footer-column{
-    display:flex;
-    flex-direction:column;
+
+
+
+/* USER ITEM */
+.user-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+
+
+
+  padding:12px;
+  border-radius:14px;
+
+
+
+
+  cursor:pointer;
 }
 
-.footer-column h4{
-    margin-bottom:18px;
-    font-size:15px;
+
+
+
+.user-item:hover{
+  background:#f5f5f5;
 }
 
-.footer-column a{
-    color:#a7b3c1;
-    text-decoration:none;
-    margin-bottom:10px;
-    font-size:14px;
+
+
+
+.user-item.active{
+  background:#f3f3f3;
 }
 
-.footer-column a:hover{
-    color:white;
+
+
+
+.user-item img{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+
+
+
+.user-info h4{
+  font-size:14px;
+  margin-bottom:4px;
+}
+
+
+
+
+.user-info p{
+  font-size:12px;
+  color:#777;
+}
+
+
+
+
+/* RIGHT PANEL */
+.right-panel{
+  flex:1;
+  background:#fff;
+  border-radius:20px;
+  padding:25px;
+
+
+
+
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+
+
+
+/* PROFILE HEADER */
+.profile-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+
+
+
+  margin-bottom:30px;
+}
+
+
+
+
+.profile-info{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+
+
+
+.profile-info img{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+
+
+
+.profile-text p{
+  color:#777;
+  margin-top:5px;
+}
+
+
+
+
+/* PROFILE ACTIONS */
+.profile-actions{
+  display:flex;
+  gap:12px;
+}
+
+
+
+
+.follow-btn,
+.message-btn{
+  border:none;
+  padding:12px 20px;
+  border-radius:12px;
+  cursor:pointer;
+}
+
+
+
+
+.follow-btn{
+  background:#f3f3f3;
+}
+
+
+
+
+.message-btn{
+  background:#111827;
+  color:#fff;
+}
+
+
+
+
+/* NOTE SECTION */
+.note-section{
+  border:1px solid #eee;
+  border-radius:16px;
+  padding:20px;
+
+
+
+
+  margin-bottom:25px;
+}
+
+
+
+
+.note-top{
+  margin-bottom:15px;
+}
+
+
+
+
+.editor-tools{
+  display:flex;
+  gap:18px;
+
+
+
+
+  color:#555;
+  margin-bottom:15px;
+}
+
+
+
+
+textarea{
+  width:100%;
+  height:120px;
+
+
+
+
+  border:none;
+  outline:none;
+  resize:none;
+
+
+
+
+  font-size:14px;
+}
+
+
+
+
+/* CONTACT LIST */
+.contact-list{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+
+
+
+
+  margin-bottom:30px;
+}
+
+
+
+
+.contact-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+
+
+
+  color:#555;
+}
+
+
+
+
+/* PRODUCT TABLE */
+.product-table{
+  width:100%;
+}
+
+
+
+
+/* TABLE HEADER */
+.table-header{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+
+
+
+
+  padding-bottom:15px;
+  border-bottom:1px solid #eee;
+
+
+
+
+  color:#777;
+  font-size:14px;
+}
+
+
+
+
+/* TABLE ROW */
+.table-row{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+
+
+
+
+  align-items:center;
+
+
+
+
+  padding:18px 0;
+  border-bottom:1px solid #f1f1f1;
+}
+
+
+
+
+/* PRODUCT INFO */
+.product-info{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+
+
+
+.product-info img{
+  width:50px;
+  height:50px;
+  border-radius:12px;
+  object-fit:cover;
+}
+
+
+
+
+.product-info h4{
+  margin-bottom:4px;
+  font-size:14px;
+}
+
+
+
+
+.product-info p{
+  font-size:12px;
+  color:#777;
+}
+
+
+
+
+/* PRICE */
+.price{
+  width:70px;
+  padding:8px;
+  border-radius:10px;
+
+
+
+
+  text-align:center;
+  font-size:13px;
+}
+
+
+
+
+.green{
+  background:#dcfce7;
+  color:#166534;
+}
+
+
+
+
+.yellow{
+  background:#fef3c7;
+  color:#92400e;
 }
 </style>
 <body>
-  <!--nav-->
-  <nav>
-    <div>
-    <img class="logo" src="./images/Logo.png" alt="logo">
+
+
+<div class="dashboard">
+
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+
+
+    <!-- SEARCH -->
+    <div class="search-box">
+
+
+      <i class="fa-solid fa-magnifying-glass"></i>
+
+
+      <input
+        type="text"
+        placeholder="Search or type a command"
+      >
+
+
+      <span class="shortcut">⌘ F</span>
+
+
     </div>
 
 
-      <span class="href">
-   <a href="#">Home</a>
-    <a href="#">About Us</a>
-    <a href="#">Pages</a>
-    <a href="#">Agent</a>
-    <a href="#">Blog</a>
-    <a href="#">Subscribe</a>
-     </span>
+    <!-- RIGHT -->
+    <div class="topbar-right">
 
 
-    <button class="navbtn">Let's Talk</button>
-  </nav>
-<!--hero section--->
-<section class="hero">
-  <div class="heroleft">
-  <img class="imageleft" src="./images/IMG-20260529-WA0022.jpg" alt="team meeting">
-  </div>
+      <!-- CREATE BUTTON -->
+      <button class="create-btn">
+        <i class="fa-solid fa-plus"></i>
+        Create
+      </button>
 
 
- <div class="heroright">
-  <h1 class="empower">Enpowering your business with the best solution</h1>
- <p class="we">We connect your brand &amp; businesses with your target  market in the most creative
-and absolute way possible through the digital medium.</p>
- </div>
-
-<div class="hero-form">
-  <input type="email" placeholder="Enter your email address" />
-  <button class="let">Let's Talk</button>
-</div>
-</section>
-
-
-<!--stat-->
-<section>
-  <div class="win">
-<span class="connect">We connect your busines</span>
-<span class="target">with your target </span>
-</div>
-   <div class="stats-row">
-   <div class="stat"><h3>1,093</h3>
-    <p>Finished Project</p></div>
-   <div class="stat"><h3>3,355</h3>
-    <p>Enrolled Project</p></div>
-   <div class="stat"><h3>40</h3>
-    <p>Team Worker</p></div>
-   <div class="stat"><h3>90%</h3>
-    <p>Satisfaction Rate</p></div>
- </section>
-
-
- <!-- WIDE TEAM PHOTO -->
-<img class="wide-img"
-  src="./images/IMG-20260529-WA0037.jpg"
-  alt="Team collaborating" />
-
-  <!--services-->
-  <section class="sertvices">
-  <span class="care">We have made you</span>
-  <span class="easy">care easy for you</span>
-
-
-  <!---textleft-imageright-->
-    <div class="svc-row">
-    <div class="svc-text">
-      <h3>Effective Website Design<br/>and Development</h3>
-      <p>By connecting actions all over  the world to the best instructors, Healthcare helping 
-individuals reach their goals and pursue their dreams.</p>
-      <button>Let's Talk</button>
-    </div>
-
-     <div class="svc-img-wrap">
-   <img class="svc-img"
-     src="./images/IMG-20260529-WA0031.jpg"
-     alt="left"/>
- </div>
-</div>
-
-
-
-  <!--image left, text right -->
-     <div class="about">
-      <div class="about-image">
-     <img
-       src="./images/IMG-20260529-WA0030.jpg"
-       alt="image"/>
-       </div>
-   
-
-   <div class="about-text">
-    <h2>
-      Effective Website Design and
-      Development
-    </h2>
-
-    <p>
-      By connecting patients all over the world to the best instructors
-    </p>
-
-    <button class="about-button">Let's Talk</button>
-   </div>
-   </div>
-  
- <!-- Row 3: text left, image right 
--->
- <div class="svc-row">
-   <div class="svc-text">
-     <h3>People Will Always 
-Judge<br/>the book by it's 
-cover.</h3>
-     <p>By connecting patients all 
-over the world to the best 
-instructors, Healthcare 
-helping 
-ndividuals reach their goals and 
-ursue their transform.</p>
-     <button>Let's Talk</button>
-   </div>
-   <div class="svc-img-wrap">
-     <img class="svc-img"
-       src="./images/IMG-20260529-WA0036.jpg"
-       alt="man" />
-   </div>
- </div>
-</section>
-
-
-<!--Teams-->
-<section class="team">
-  <div class="team-top">
-    <h2>Meets our great<br/>Creative 
-Teams</h2>
-    <p>Our journey began with a 
-simple idea make a simple <br>
-journey make this world more 
-function. <br> We 
-collaborate <br> with organizations that 
-are keen transform.</p>
-  </div>
-  <div class="team-cards">
-    <div class="tcard">
-      <img  src="./images/IMG-20260529-WA0027.jpg" alt="team"/>
-      <div class="tcard-body">
-        <h4>Amara Amanda</h4>
-        <p>Introduction into 
-procurement <br> 2 hours got to 
-do work <br> got to do work while 
-eating.</p>
+      <!-- ICON -->
+      <div class="icon">
+        <i class="fa-regular fa-message"></i>
       </div>
-    </div>
-    <div class="tcard">
-      <img src="./images/IMG-20260529-WA0035.jpg" alt="team"/>
-      <div class="tcard-body">
-        <h4>Lucas Podolski</h4>
-        <p>Introduction start 
-procurement <br> 3 hours got to 
-do work <br> got to do work while 
-eating.</p>
+
+
+      <!-- ICON -->
+      <div class="icon">
+        <i class="fa-regular fa-bell"></i>
       </div>
-    </div>
-    <div class="tcard">
-      <img src="./images/IMG-20260529-WA0020.jpg" alt=""/>
-      <div class="tcard-body">
-        <h4>Leny Morison Houston</h4>
-        <p>Introduction start 
-procurement  <br> 2 hours got to 
-do work <br> got to do work while 
-eating.</p>
+
+
+      <!-- PROFILE -->
+      <div class="profile">
+        <img src="./images/Profile User free icons designed by Freepik.jpg" alt="profile">
       </div>
+
+
     </div>
+
+
+  </header>
+
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+
+      <!-- LOGO -->
+      <div class="logo">
+        <i class="fa-solid fa-cube"></i>
+      </div>
+
+
+      <!-- MENU -->
+      <nav class="menu">
+
+
+        <a href="#" class="menu-item">
+          <i class="fa-solid fa-house"></i> <span>Home</span>
+        </a>
+
+
+        <!-- PRODUCTS -->
+        <div class="dropdown">
+
+
+          <div class="menu-item">
+
+
+            <div class="menu-left">
+              <i class="fa-regular fa-gem"></i>
+              <span>Products</span>
+            </div>
+
+
+            <i class="fa-solid fa-chevron-down"></i>
+
+
+          </div>
+
+
+        </div>
+
+
+        <!-- CUSTOMERS -->
+        <div class="dropdown active">
+
+
+          <div class="menu-item">
+
+
+            <div class="menu-left">
+              <i class="fa-solid fa-users"></i>
+              <span>Customers</span>
+            </div>
+
+
+            <i class="fa-solid fa-chevron-up"></i>
+
+
+          </div>
+
+
+          <!-- SUBMENU -->
+          <div class="submenu">
+
+
+            <a href="#">Overview</a>
+
+
+            <a href="#" class="active-link">
+              Customer List
+            </a>
+
+
+          </div>
+
+
+        </div>
+
+
+        <!-- SHOP -->
+        <a href="#" class="menu-item">
+
+
+          <div class="menu-left">
+            <i class="fa-solid fa-shop"></i>
+            <span>Shop</span>
+          </div>
+
+
+        </a>
+
+
+        <!-- INCOME -->
+        <div class="dropdown">
+
+
+          <div class="menu-item">
+
+
+            <div class="menu-left">
+              <i class="fa-solid fa-chart-line"></i>
+              <span>Income</span>
+            </div>
+
+
+            <i class="fa-solid fa-chevron-down"></i>
+
+
+          </div>
+
+
+        </div>
+
+
+        <!-- PROMOTE -->
+        <a href="#" class="menu-item">
+
+
+          <div class="menu-left">
+            <i class="fa-solid fa-bullhorn"></i>
+            <span>Promote</span>
+          </div>
+
+
+        </a>
+
+
+      </nav>
+
+
+      <!-- SIDEBAR BOTTOM -->
+      <div class="sidebar-bottom">
+
+
+        <!-- HELP -->
+        <div class="help-box">
+
+
+          <div class="help-left">
+            <i class="fa-regular fa-circle-question"></i>
+            <span>Help & getting started</span>
+          </div>
+
+
+          <div class="badge">
+            8
+          </div>
+
+
+        </div>
+
+
+        <!-- THEME -->
+        <div class="theme-toggle">
+
+
+          <button class="theme-btn active-btn">
+            <i class="fa-regular fa-sun"></i>
+            Light
+          </button>
+
+
+          <button class="theme-btn">
+            <i class="fa-regular fa-moon"></i>
+            Dark
+          </button>
+
+
+        </div>
+
+
+      </div>
+
+
+    </aside>
+
+
+    <!-- USER PANEL -->
+    <section class="user-panel">
+
+
+      <!-- HEADER -->
+      <div class="panel-header">
+
+
+        <input type="checkbox">
+
+
+        <span>Name</span>
+
+
+      </div>
+
+
+      <!-- USER LIST -->
+      <div class="user-list">
+
+
+        <!-- USER -->
+        <div class="user-item">
+
+
+          <input type="checkbox">
+
+
+          <img class="imgs" src="./images/Profile User free icons designed by Freepik.jpg" alt="user">
+
+
+          <div class="user-info">
+            <h4>Chelsie Haley</h4>
+            <p>@username</p>
+          </div>
+
+
+        </div>
+
+
+        <!-- ACTIVE USER -->
+        <div class="user-item active">
+
+
+          <input type="checkbox">
+
+
+          <img class="imgs" src="./images/Profile User free icons designed by Freepik.jpg"alt="user">
+
+
+          <div class="user-info">
+            <h4>Chelsie Haley</h4>
+            <p>@username</p>
+          </div>
+
+
+          <i class="fa-solid fa-chevron-right"></i>
+
+
+        </div>
+
+
+        <!-- USER -->
+        <div class="user-item">
+
+
+          <input type="checkbox">
+
+
+          <img class="imgs" src="./images/Profile User free icons designed by Freepik.jpg"alt="user">
+
+
+          <div class="user-info">
+            <h4>Orion Luettgen</h4>
+            <p>@username</p>
+          </div>
+
+
+        </div>
+
+
+        <!-- USER -->
+        <div class="user-item">
+
+
+          <input type="checkbox">
+
+
+          <img class="imgs" src="./images/Profile User free icons designed by Freepik.jpg" alt="user">
+
+
+          <div class="user-info">
+            <h4>Brown Beatty</h4>
+            <p>@username</p>
+          </div>
+
+
+        </div>
+
+
+                <div class="user-item">
+
+
+          <input type="checkbox">
+
+
+          <img class="imgs" src="./images/Profile User free icons designed by Freepik.jpg
+          " alt="user">
+
+
+          <div class="user-info">
+            <h4>Brown Beatty</h4>
+            <p>@username</p>
+          </div>
+
+
+        </div>
+
+
+                <div class="user-item">
+
+
+          <input type="checkbox">
+
+
+          <img class="imgs" src="./images/Profile User free icons designed by Freepik.jpg"alt="user">
+
+
+          <div class="user-info">
+            <h4>Brown Beatty</h4>
+            <p>@username</p>
+          </div>
+
+
+        </div>
+
+
+                <div class="user-item">
+
+
+          <input type="checkbox">
+
+
+          <img class="imgs" src="./images/Profile User free icons designed by Freepik.jpg"alt="user">
+
+
+          <div class="user-info">
+            <h4>Brown Beatty</h4>
+            <p>@username</p>
+          </div>
+
+
+        </div>
+
+
+                <div class="user-item">
+
+
+          <input type="checkbox">
+
+
+          <img class="imgs" src="./images/Profile User free icons designed by Freepik.jpg"alt="user">
+
+
+          <div class="user-info">
+            <h4>Brown Beatty</h4>
+            <p>@username</p>
+          </div>
+
+
+        </div>
+
+
+           <div class="user-item">
+
+
+          <input type="checkbox">
+
+
+          <img class="imgs" src="./images/Profile User free icons designed by Freepik.jpg" alt="user">
+
+
+          <div class="user-info">
+            <h4>Brown Beatty</h4>
+            <p>@username</p>
+          </div>
+
+
+        </div>
+
+
+        
+
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- RIGHT PANEL -->
+    <section class="right-panel">
+
+
+      <!-- PROFILE HEADER -->
+      <div class="profile-header">
+
+
+        <div class="profile-info">
+
+
+          <img class="imgs" src="./images/Profile User free icons designed by Freepik.jpg" alt="profile">
+
+
+          <div class="profile-text">
+            <h3>Chelsie Haley</h3>
+            <p>@chelseahely</p>
+          </div>
+
+
+        </div>
+
+
+        <!-- ACTIONS -->
+        <div class="profile-actions">
+
+
+          <button class="follow-btn">
+            Follow
+          </button>
+
+
+          <button class="message-btn">
+            Message
+          </button>
+
+
+        </div>
+
+
+      </div>
+
+
+      <!-- NOTE SECTION -->
+      <div class="note-section">
+
+
+        <div class="note-top">
+          <span>Private note</span>
+        </div>
+
+
+        <!-- TOOLS -->
+        <div class="editor-tools">
+
+
+          <i class="fa-solid fa-bold"></i>
+          <i class="fa-solid fa-italic"></i>
+          <i class="fa-solid fa-underline"></i>
+          <i class="fa-solid fa-link"></i>
+
+
+        </div>
+
+
+        <!-- TEXTAREA -->
+        <textarea></textarea>
+
+
+      </div>
+
+
+      <!-- CONTACTS -->
+      <div class="contact-list">
+
+
+        <div class="contact-item">
+          <i class="fa-regular fa-envelope"></i>
+          <span>fahey.designer@robot.co</span>
+        </div>
+
+
+        <div class="contact-item">
+          <i class="fa-brands fa-twitter"></i>
+          <span>Twitter</span>
+        </div>
+
+
+        <div class="contact-item">
+          <i class="fa-solid fa-globe"></i>
+          <span>robot.co</span>
+        </div>
+
+
+      </div>
+
+
+      <!-- PRODUCT TABLE -->
+      <div class="product-table">
+
+
+        <!-- HEADER -->
+        <div class="table-header">
+
+
+          <span>Product</span>
+          <span>Price</span>
+          <span>Date</span>
+
+
+        </div>
+
+
+        <!-- ROW -->
+        <div class="table-row">
+
+
+          <div class="product-info">
+
+
+            <img src="./images/pngegg.png" alt="product">
+
+
+            <div>
+              <h4>Product title</h4>
+              <p>url.to/product-link</p>
+            </div>
+
+
+          </div>
+
+
+          <span class="price green">$64.00</span>
+
+
+          <span>Apr 9, 2021</span>
+
+
+        </div>
+
+
+        <!-- ROW -->
+        <div class="table-row">
+
+
+          <div class="product-info">
+
+
+            <img src="./images/pngegg.png" alt="product">
+
+
+            <div>
+              <h4>Product title</h4>
+              <p>url.to/product-link</p>
+            </div>
+
+
+          </div>
+
+
+          <span class="price yellow">$64.00</span>
+
+
+          <span>Apr 9, 2021</span>
+
+
+        </div>
+
+
+        <!-- ROW -->
+        <div class="table-row">
+
+
+          <div class="product-info">
+
+
+            <img src="./images/pngegg.png" alt="product">
+
+
+            <div>
+              <h4>Product title</h4>
+              <p>url.to/product-link</p>
+            </div>
+
+
+          </div>
+
+
+          <span class="price green">$64.00</span>
+
+
+          <span>Apr 9, 2021</span>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
   </div>
-  <div class="team-see-more">
-    <button 
-class="see-more-btn">See More</button>
-  </div>
-</section>
-<!--footer-->
-<!-- FOOTER -->
-<footer>
-  <div class="footer-top">
 
-    <div class="footer-logo">
-      <img src="./images/Logo.png" alt="logo">
-    </div>
 
-    <div class="social-icons">
-      <a href="#"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-      <a href="#"><i class="fa-brands fa-twitter"></i></a>
-      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
-    </div>
+</div>
 
-  </div>
 
-  <div class="footer-content">
-
-    <div class="footer-column">
-      <h4>Our Products</h4>
-      <a href="#">The Support Suite</a>
-      <a href="#">The Sales Suite</a>
-      <a href="#">Support</a>
-      <a href="#">Guide</a>
-    </div>
-
-    <div class="footer-column">
-      <h4>Top Features</h4>
-      <a href="#">Ticketing System</a>
-      <a href="#">Knowledge Base</a>
-      <a href="#">Community Forum</a>
-      <a href="#">Help Desk Software</a>
-    </div>
-
-    <div class="footer-column">
-      <h4>Resources</h4>
-      <a href="#">Product Support</a>
-      <a href="#">Request Demo</a>
-      <a href="#">Blog</a>
-      <a href="#">Learning Hub</a>
-    </div>
-
-    <div class="footer-column">
-      <h4>Company</h4>
-      <a href="#">About Us</a>
-      <a href="#">Press</a>
-      <a href="#">Investors</a>
-      <a href="#">Events</a>
-    </div>
-
-    <div class="footer-column">
-      <h4>Favourite Things</h4>
-      <a href="#">For Enterprise</a>
-      <a href="#">For Startups</a>
-      <a href="#">For Ecommerce</a>
-      <a href="#">For SMB Software</a>
-    </div>
-
-  </div>
-</footer>
-</body>
 </body>
 </html>
